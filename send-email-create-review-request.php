@@ -1,9 +1,5 @@
 <?php
     header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Credentials: true");
-    header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-    header('Access-Control-Max-Age: 1000');
-    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, Authorization');
     
     $row_id = filter_input(INPUT_POST, 'row_id');
     $item_id = filter_input(INPUT_POST, 'item_id');

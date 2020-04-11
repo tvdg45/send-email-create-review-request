@@ -7,7 +7,7 @@
     $subject = filter_input(INPUT_POST, 'subject');
     $description = filter_input(INPUT_POST, 'description');
     $name = filter_input(INPUT_POST, 'name');
-    $email = filter_input(INPUT_POST, 'email');
+    $email = 'ltrman1996@hotmail.com';
     $security_code = filter_input(INPUT_POST, 'security_code');
     $message = '';
     

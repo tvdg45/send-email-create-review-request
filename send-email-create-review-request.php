@@ -21,7 +21,7 @@
             && $security_code != '' && !(ctype_space($security_code))) {*/
         
         //Take the rating number, and use a word to describe the rating.
-        switch ($rating) {
+        /*switch ($rating) {
             
             case '5':
                 
@@ -104,7 +104,7 @@
         $headers[] = 'X-Mailer: PHP/' . phpversion();
 
         // Mail it
-        mail($email, ($name . ', thank you for your feedback!'), $message, implode("\r\n", $headers));
+        mail($email, ($name . ', thank you for your feedback!'), $message, implode("\r\n", $headers));*/
         
         echo 'success';
     //}

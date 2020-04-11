@@ -1,7 +1,8 @@
 <?php
     header("Access-Control-Allow-Origin: *");
+    header("Content-type: application/x-www-form-urlencoded");
     
-    /*$row_id = filter_input(INPUT_POST, 'row_id');
+    $row_id = filter_input(INPUT_POST, 'row_id');
     $item_id = filter_input(INPUT_POST, 'item_id');
     $rating = filter_input(INPUT_POST, 'rating');
     $subject = filter_input(INPUT_POST, 'subject');
@@ -104,7 +105,7 @@
         $headers[] = 'X-Mailer: PHP/' . phpversion();
 
         // Mail it
-        mail($email, ($name . ', thank you for your feedback!'), $message, implode("\r\n", $headers));*/
+        mail($email, ($name . ', thank you for your feedback!'), $message, implode("\r\n", $headers));
         
         echo 'success';
-    //}
+    }

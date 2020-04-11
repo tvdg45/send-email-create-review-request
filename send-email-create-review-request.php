@@ -7,18 +7,18 @@
     $subject = filter_input(INPUT_POST, 'subject');
     $description = filter_input(INPUT_POST, 'description');
     $name = filter_input(INPUT_POST, 'name');
-    $email = 'ltrman1996@hotmail.com';
+    $email = filter_input(INPUT_POST, 'email');
     $security_code = filter_input(INPUT_POST, 'security_code');
     $message = '';
     
-    /*if ($row_id != '' && !(ctype_space($row_id))
+    if ($row_id != '' && !(ctype_space($row_id))
             && $item_id != '' && !(ctype_space($item_id))
             && $rating != '' && !(ctype_space($rating))
             && $subject != '' && !(ctype_space($subject))
             && $description != '' && !(ctype_space($description))
             && $name != '' && !(ctype_space($name))
             && $email != '' && !(ctype_space($email)) && filter_var($email, FILTER_VALIDATE_EMAIL)
-            && $security_code != '' && !(ctype_space($security_code))) {*/
+            && $security_code != '' && !(ctype_space($security_code))) {
         
         //Take the rating number, and use a word to describe the rating.
         switch ($rating) {
@@ -107,4 +107,4 @@
         mail($email, ($name . ', thank you for your feedback!'), $message, implode("\r\n", $headers));
         
         echo 'success';
-    //}
+    }

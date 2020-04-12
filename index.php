@@ -2,6 +2,7 @@
     header("Access-Control-Allow-Origin: *");
     header("Content-type: application/x-www-form-urlencoded");
     
+    $domain = filter_input(INPUT_POST, 'domain');
     $row_id = filter_input(INPUT_POST, 'row_id');
     $item_id = filter_input(INPUT_POST, 'item_id');
     $rating = filter_input(INPUT_POST, 'rating');
@@ -12,7 +13,8 @@
     $security_code = filter_input(INPUT_POST, 'security_code');
     $message = '';
     
-    if ($row_id != '' && !(ctype_space($row_id))
+    if ($domain != '' && !(ctype_space($domain))
+            && $row_id != '' && !(ctype_space($row_id))
             && $item_id != '' && !(ctype_space($item_id))
             && $rating != '' && !(ctype_space($rating))
             && $subject != '' && !(ctype_space($subject))
@@ -86,7 +88,7 @@
         $message .= "</p>\r\n";
         $message .= "</div>\r\n";
         $message .= "<div style=\"text-align: left\">\r\n";
-        $message .= "<p><a href='file:///C:/Users/ltrma/Desktop/TDS-custom-software/Timothys_Digital_Solutions_Shopping_Cart/web/product-reviews.html?code=" . $security_code . "&review=" . $row_id . "&product=" . $item_id . "&sort=Low%20to%20high&perpage=10&page=1&showreview=Show&search=Search'>Make review public</a></p>\r\n";
+        $message .= "<p><a href='" . $domain . "/product-reviews.html?code=" . $security_code . "&review=" . $row_id . "&product=" . $item_id . "&sort=Low%20to%20high&perpage=10&page=1&showreview=Show&search=Search'>Make review public</a></p>\r\n";
         $message .= "</div>\r\n";
         $message .= "<div style=\"text-align: left\">\r\n";
         $message .= "<p>If you did not write this review disregard it.  Reviews that are not shown as public will be deleted within one day.</p>\r\n";
